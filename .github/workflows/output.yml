@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show event name
-        run: echo "Event name: $EVENT_NAME"
         env:
           EVENT_NAME: ${{ github.event_name }}
+        run: echo "Event name: $EVENT_NAME"
       - name: Dump full event payload:
         run: echo "${{ toJson(github.event) }}"
